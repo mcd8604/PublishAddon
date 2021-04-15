@@ -43,7 +43,10 @@ function Publish-Addon {
         $addonsDirectory = Join-Path $addonsDirectory -ChildPath "Interface/AddOns"
     }
     process {
-        $wowClassicVersion = "1.13.5"
+        $wowClassicVersion = "1.13.6"
+        if ($beta -eq $true) {
+            $wowClassicVersion = "2.5.1"
+        }
         $tempDir = "/tmp/wowpkg"
         $uncTempDir = "\\wsl$\Ubuntu\tmp\wowpkg"
 
